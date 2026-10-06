@@ -1,0 +1,9 @@
+name: api_client
+resolution: workspace
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  core:
+  dio: ^5.4.0

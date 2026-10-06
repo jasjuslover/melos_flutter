@@ -1,0 +1,7 @@
+name: core
+resolution: workspace
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:

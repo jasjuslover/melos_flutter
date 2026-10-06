@@ -1,0 +1,33 @@
+name: melos_flutter
+publish_to: none
+environment:
+  sdk: ^3.9.0
+
+workspace:
+  - apps/customer_app
+  - packages/design_system
+  - packages/api_client
+
+dev_dependencies:
+  melos: ^8.0.0
+
+melos:
+  scripts:
+    # backend
+    backend:db:
+      run: cd "$MELOS_ROOT_PATH/apps/backend" && docker compose up -d
+      description: Turning on PostgreSQL for development
+    backend:run:
+      run: cd "$MELOS_ROOT_PATH/apps/backend" && go run .
+      description: Running Go API http://localhost:8080
+    # flutter
+    gen:
+      exec: dart run build_runner build -d
+      packageFilters:
+        dependsOn: build_runner
+    app:run:
+      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run
+      description: Run the flutter app
+
+    analyze:
+      run: melos exec -- flutter analyze
