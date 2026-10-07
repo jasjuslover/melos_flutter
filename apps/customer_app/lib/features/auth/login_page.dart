@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:customer_app/features/auth/auth_controller.dart';
 import 'package:customer_app/shared/messages.dart';
 import 'package:customer_app/shared/validator.dart';
@@ -26,7 +28,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   }
 
   Future<void> _submit() async {
-    if (_formKey.currentState!.validate()) return;
+    print('coba login');
+    if (!_formKey.currentState!.validate()) return;
+    print('coba login setelah validasi');
     setState(() {
       _loading = true;
       _error = null;

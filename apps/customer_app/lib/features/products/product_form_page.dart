@@ -1,5 +1,6 @@
 import 'package:api_client/api_client.dart';
 import 'package:customer_app/features/products/products_controller.dart';
+import 'package:customer_app/shared/error_view.dart';
 import 'package:customer_app/shared/messages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,6 +17,19 @@ class ProductFormPage extends ConsumerWidget {
     final id = productId;
     return Scaffold(
       appBar: AppBar(title: Text(id == null ? "Add Product" : "Edit Product")),
+      body: id == null
+          ? const _ProductForm()
+          : ref
+                .watch(productDetailProvider(id))
+                .when(
+                  data: (product) => _ProductForm(initial: product),
+                  error: (error, _) => ErrorView(
+                    message: messageOf(error),
+                    onRetry: () => ref.invalidate(productDetailProvider),
+                  ),
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                ),
     );
   }
 }

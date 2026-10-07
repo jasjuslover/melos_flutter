@@ -20,7 +20,7 @@ class ProductListPage extends ConsumerWidget {
         title: const Text('My Products'),
         actions: [
           IconButton(
-            onPressed: () => ref.read(authControllerProvider.notifier),
+            onPressed: () => ref.read(authControllerProvider.notifier).logout(),
             icon: const Icon(Icons.logout),
             tooltip: "Logout",
           ),
