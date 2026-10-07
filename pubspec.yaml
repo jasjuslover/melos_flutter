@@ -5,6 +5,7 @@ environment:
 
 workspace:
   - apps/customer_app
+  - packages/core
   - packages/design_system
   - packages/api_client
 
