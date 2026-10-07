@@ -1,6 +1,6 @@
-import 'package:api_client/api_client.dart';
-import 'package:customer_app/features/auth/auth_controller.dart';
-import 'package:customer_app/features/products/products_controller.dart';
+import 'package:customer_app/features/auth/presentation/auth_controller.dart';
+import 'package:customer_app/features/products/domain/product.dart';
+import 'package:customer_app/features/products/presentation/products_controller.dart';
 import 'package:customer_app/shared/error_view.dart';
 import 'package:customer_app/shared/formatters.dart';
 import 'package:customer_app/shared/messages.dart';
@@ -145,7 +145,7 @@ class _ListFooter extends ConsumerWidget {
         ),
       );
     }
-    if (!state.hasMore) {
+    if (state.nextCursor?.isEmpty == true) {
       return Padding(
         padding: const EdgeInsets.all(16),
         child: Center(

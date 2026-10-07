@@ -1,5 +1,5 @@
-import 'package:api_client/api_client.dart';
-import 'package:customer_app/features/products/products_controller.dart';
+import 'package:customer_app/features/products/domain/product.dart';
+import 'package:customer_app/features/products/presentation/products_controller.dart';
 import 'package:customer_app/shared/error_view.dart';
 import 'package:customer_app/shared/messages.dart';
 import 'package:flutter/material.dart';
@@ -69,16 +69,18 @@ class __ProductFormState extends ConsumerState<_ProductForm> {
     });
 
     final controller = ref.read(productsControllerProvider.notifier);
-    final name = _name.text.trim();
-    final price = int.parse(_price.text);
-    final stock = int.parse(_stock.text);
+    final input = ProductInput(
+      name: _name.text.trim(),
+      price: int.parse(_price.text),
+      stock: int.parse(_stock.text),
+    );
     final initial = widget.initial;
 
     try {
       if (initial == null) {
-        controller.create(name: name, price: price, stock: stock);
+        controller.create(input);
       } else {
-        controller.edit(initial.id, name: name, price: price, stock: stock);
+        controller.edit(initial.id, input);
       }
       if (!mounted) return;
       showSnack(context, initial == null ? "Product added" : "Product updated");

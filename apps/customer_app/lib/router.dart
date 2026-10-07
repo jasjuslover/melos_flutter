@@ -1,9 +1,9 @@
-import 'package:customer_app/features/auth/auth_controller.dart';
-import 'package:customer_app/features/auth/login_page.dart';
-import 'package:customer_app/features/auth/register_page.dart';
-import 'package:customer_app/features/auth/splash_page.dart';
-import 'package:customer_app/features/products/product_form_page.dart';
-import 'package:customer_app/features/products/product_list_page.dart';
+import 'package:customer_app/features/auth/presentation/auth_controller.dart';
+import 'package:customer_app/features/auth/presentation/login_page.dart';
+import 'package:customer_app/features/auth/presentation/register_page.dart';
+import 'package:customer_app/features/auth/presentation/splash_page.dart';
+import 'package:customer_app/features/products/presentation/product_form_page.dart';
+import 'package:customer_app/features/products/presentation/product_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

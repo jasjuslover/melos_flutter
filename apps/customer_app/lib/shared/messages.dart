@@ -1,8 +1,8 @@
-import 'package:api_client/api_client.dart';
+import 'package:customer_app/core/failure.dart';
 import 'package:flutter/material.dart';
 
 String messageOf(Object error) {
-  if (error is ApiException) return error.message;
+  if (error is Failure) return error.message;
   return 'Something went wrong. Please try again';
 }
 

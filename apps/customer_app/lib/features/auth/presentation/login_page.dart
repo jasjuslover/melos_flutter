@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:customer_app/features/auth/auth_controller.dart';
+import 'package:customer_app/features/auth/presentation/auth_controller.dart';
 import 'package:customer_app/shared/messages.dart';
 import 'package:customer_app/shared/validator.dart';
 import 'package:flutter/material.dart';
