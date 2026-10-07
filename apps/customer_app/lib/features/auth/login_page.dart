@@ -28,9 +28,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   }
 
   Future<void> _submit() async {
-    print('coba login');
     if (!_formKey.currentState!.validate()) return;
-    print('coba login setelah validasi');
     setState(() {
       _loading = true;
       _error = null;
