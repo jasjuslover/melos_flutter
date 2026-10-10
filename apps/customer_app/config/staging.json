@@ -1,0 +1,4 @@
+{
+    "FLAVOR": "staging",
+    "API_URL": "https://staging.api.example.com"
+}

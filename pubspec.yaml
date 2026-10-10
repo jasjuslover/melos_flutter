@@ -27,8 +27,20 @@ melos:
       packageFilters:
         dependsOn: build_runner
     app:run:
-      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run
-      description: Run the flutter app
+      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run --flavor local --dart-define-from-file=config/local.json
+      description: Run flavor local (local backend)
+    app:run:dev:
+      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run --flavor dev --dart-define-from-file=config/dev.json
+      description: Run flavor dev (local backend)
+    app:run:device:
+      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run --flavor dev --dart-define-from-file=config/dev.json --dart-define=API_URL=$API_URL
+      description: "dev flavor in real device. example: API_URL=https://xxxx.ngrok.app melos app:run:device"
+    app:run:staging:
+      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run --flavor staging --dart-define-from-file=config/staging.json
+      description: Run flavor staging (staging server)
+    app:run:production:
+      run: cd "$MELOS_ROOT_PATH/apps/customer_app" && flutter run --flavor production --dart-define-from-file=config/production.json
+      description: Run flavor production (BE CAREFUL, real data)
 
     analyze:
       run: melos exec -- flutter analyze

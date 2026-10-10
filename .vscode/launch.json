@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "customer_app (local)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "apps/customer_app",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "local", "--dart-define-from-file", "config/local.json"]
+    },
+    {
+      "name": "customer_app (dev)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "apps/customer_app",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "dev", "--dart-define-from-file", "config/dev.json"]
+    },
+    {
+      "name": "customer_app (staging)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "apps/customer_app",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "staging", "--dart-define-from-file", "config/staging.json"]
+    },
+    {
+      "name": "customer_app (production)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "apps/customer_app",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "production", "--dart-define-from-file", "config/production.json"]
+    },
+    {
+      "name": "customer_app (fake)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "apps/customer_app",
+      "program": "lib/main_fake.dart",
+      "args": ["--flavor", "dev", "--dart-define-from-file", "config/dev.json"]
+    }
+  ]
+}

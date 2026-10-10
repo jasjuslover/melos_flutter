@@ -1,0 +1,3 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.example.customerApp.staging
+APP_DISPLAY_NAME = Staging App
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
